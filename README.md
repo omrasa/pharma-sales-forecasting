@@ -1,12 +1,13 @@
 # Pharmaceutical Sales Forecasting
 
 ## Overview
-Time-series analysis and forecasting of monthly pharmaceutical drug sales 
-using 17 years of historical data. Built a SARIMA model to predict future 
-sales with 88.3% accuracy.
+Time-series analysis and forecasting of monthly pharmaceutical drug sales
+using 17 years of historical data. Built a SARIMA model to predict future
+sales with 88.3% accuracy. Includes trend decomposition and root cause
+analysis of seasonal demand patterns to support commercial planning.
 
-**Dataset:** Monthly drug sales 1991–2008 (204 data points)  
-**Tools:** Python · Pandas · NumPy · Matplotlib · Statsmodels  
+**Dataset:** Monthly drug sales 1991–2008 (204 data points)
+**Tools:** Python · Pandas · NumPy · Matplotlib · Statsmodels
 
 ---
 
@@ -16,22 +17,29 @@ sales with 88.3% accuracy.
 - **Strong upward trend** across 17 years — sales grew from ~3.5 to ~25 units/month
 - **SARIMA model achieved 88.3% accuracy** on 24 months of unseen data
 - **Mean absolute error of 2.63 units/month** on a scale of 2.8–29.7
+- **Root cause of seasonal spike identified** — January demand consistently
+  drives the highest sales across all 17 years, enabling targeted inventory
+  and resource planning
 
 ---
 
 ## Methods
 
-**Exploratory Analysis:** Identified upward trend and strong seasonal pattern 
+**Exploratory Analysis:** Identified upward trend and strong seasonal pattern
 by visualising monthly averages across all years.
 
-**Train/Test Split:** First 180 months used for training, last 24 months 
+**Train/Test Split:** First 180 months used for training, last 24 months
 held out for model validation.
 
-**SARIMA Model:** Seasonal AutoRegressive Integrated Moving Average with 
-12-month seasonal cycle — standard approach for pharmaceutical demand 
+**SARIMA Model:** Seasonal AutoRegressive Integrated Moving Average with
+12-month seasonal cycle — standard approach for pharmaceutical demand
 forecasting.
 
-**Validation:** Predictions compared against actual held-out data using 
+**Seasonal Root Cause Analysis:** Monthly averages decomposed across all
+17 years to identify consistent demand drivers — distinguishing structural
+seasonal patterns from random noise.
+
+**Validation:** Predictions compared against actual held-out data using
 Mean Absolute Error and percentage accuracy.
 
 ---
@@ -45,6 +53,7 @@ Mean Absolute Error and percentage accuracy.
 | Mean Absolute Error | 2.63 |
 | Forecast accuracy | 88.3% |
 | Peak sales month | January |
+| Lowest sales month | February |
 
 ---
 
@@ -61,6 +70,7 @@ jupyter notebook notebooks/
 
 ## Background
 
-This project demonstrates time-series forecasting techniques applied to 
-pharmaceutical commercial data — directly relevant to demand planning, 
-inventory management, and sales operations roles in the pharma industry.
+This project demonstrates time-series forecasting and seasonal root cause
+analysis techniques applied to pharmaceutical commercial data — directly
+relevant to demand planning, inventory management, and sales operations
+roles in the pharma industry.
